@@ -1,0 +1,21 @@
+{
+  "graph_doc_id": "test",
+  "graph_source_file": "test.md",
+  "metadata_doc_id": "test",
+  "metadata_source_file": "test.md",
+  "metadata_evidence_uid": "test::metadata_structured",
+  "existing_metadata_structured_nodes": 0,
+  "action": "insert_new",
+  "replaced_indices": [],
+  "inserted": true,
+  "warnings": [],
+  "identifier_check": {
+    "node_id_unique": true,
+    "evidence_uid_unique": true,
+    "node_id_count": 193,
+    "evidence_uid_count": 193
+  },
+  "final_total_nodes": 193,
+  "final_total_edges": 646,
+  "metadata_structured_nodes": 1
+}

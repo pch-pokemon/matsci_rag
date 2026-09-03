@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0",
+  "passed": true,
+  "summary": {
+    "errors": 0,
+    "warnings": 1,
+    "infos": 0
+  },
+  "checks": {
+    "inputs": {
+      "output_dir": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output",
+      "paper_graph": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\paper_graph.json",
+      "retrieval_docs": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\retrieval_docs.jsonl",
+      "faiss_index_dir": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\faiss_section_indexes",
+      "asset_base_dir": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case",
+      "source_root": null,
+      "result_json": null
+    },
+    "graph": {
+      "doc_id": "test",
+      "source_file": "test.md",
+      "schema_version": "2.1-evidence-graph",
+      "node_count": 193,
+      "edge_count": 646,
+      "node_type_counts": {
+        "additional_info": 4,
+        "equation": 1,
+        "figure": 13,
+        "metadata": 1,
+        "metadata_structured": 1,
+        "reference": 82,
+        "section": 19,
+        "section_chunk": 67,
+        "table": 5
+      },
+      "chunking_config": {
+        "strategy": "section -> paragraph -> SciSpaCy sentence -> BGE-token-aware chunk",
+        "spacy_model": "en_core_sci_sm",
+        "tokenizer_model": "D:\\BGE_large_en_1.5v",
+        "tokenizer_model_max_length": 512,
+        "max_chunk_tokens": 480,
+        "sentence_overlap": 1,
+        "token_count_includes_special_tokens": true
+      },
+      "all_node_ids_unique": true,
+      "all_evidence_uids_unique": true,
+      "all_edge_endpoints_resolve": true,
+      "asset_roots_checked": [
+        "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case",
+        "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output",
+        "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\intermediate"
+      ]
+    },
+    "source_document": {
+      "found": true,
+      "path": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\source\\test.md"
+    },
+    "retrieval_docs": {
+      "row_count": 67,
+      "graph_chunk_count": 67,
+      "complete_chunk_coverage": true,
+      "bucket_counts": {
+        "intro": 5,
+        "method": 13,
+        "results": 23,
+        "discussion": 19,
+        "results_discussion": 0,
+        "conclusion": 7,
+        "other": 0
+      }
+    },
+    "faiss": {
+      "present": true,
+      "index_dir": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\faiss_section_indexes",
+      "manifest_present": true,
+      "expected_document_counts": {
+        "intro": 5,
+        "method": 13,
+        "results": 23,
+        "discussion": 19,
+        "results_discussion": 0,
+        "conclusion": 7,
+        "other": 0,
+        "metadata": 1
+      },
+      "deep_faiss_checked": false,
+      "deep_index_stats": {}
+    }
+  },
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "MENTION_UNRESOLVED",
+      "message": "Some explicit figure/table/equation/reference mentions could not be resolved to graph nodes",
+      "context": {
+        "examples": [
+          {
+            "node_id": "sec_2_1__chunk_1",
+            "kind": "figure",
+            "mention": "Fig. S1"
+          },
+          {
+            "node_id": "sec_2_2__chunk_1",
+            "kind": "figure",
+            "mention": "Fig. S2"
+          },
+          {
+            "node_id": "sec_2_2__chunk_2",
+            "kind": "figure",
+            "mention": "Fig. S3"
+          },
+          {
+            "node_id": "sec_2_3__chunk_2",
+            "kind": "figure",
+            "mention": "Fig. S4"
+          },
+          {
+            "node_id": "sec_2_3__chunk_3",
+            "kind": "figure",
+            "mention": "Fig. S5"
+          },
+          {
+            "node_id": "sec_3_2__chunk_1",
+            "kind": "figure",
+            "mention": "Fig. S6"
+          },
+          {
+            "node_id": "sec_3_2__chunk_4",
+            "kind": "figure",
+            "mention": "Fig. S6"
+          },
+          {
+            "node_id": "sec_3_4__chunk_5",
+            "kind": "figure",
+            "mention": "Fig. S5"
+          },
+          {
+            "node_id": "sec_4_1_1__chunk_4",
+            "kind": "figure",
+            "mention": "Fig. S6"
+          }
+        ],
+        "count": 9
+      }
+    }
+  ]
+}

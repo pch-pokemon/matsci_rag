@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "doc_id": "test",
+  "source_file": "test.md",
+  "inputs": {
+    "retrieval_docs": "retrieval_docs.jsonl",
+    "paper_graph": "paper_graph.json"
+  },
+  "embedding": {
+    "model": "D:\\BGE_large_en_1.5v",
+    "device": "cuda",
+    "normalize_embeddings": true,
+    "trust_remote_code": true,
+    "tokenizer_model_max_length": 512
+  },
+  "faiss": {
+    "index_directory": "faiss_section_indexes",
+    "distance_semantics": "LangChain FAISS.from_documents default IndexFlatL2; smaller L2 distance is more similar. With normalized embeddings, L2 ranking is monotonic with cosine similarity.",
+    "indexes": {
+      "intro": {
+        "index_name": "faiss_intro",
+        "document_count": 5,
+        "created": true,
+        "index_class": "IndexFlatL2",
+        "metric_type": 1,
+        "embedding_dimension": 1024
+      },
+      "method": {
+        "index_name": "faiss_method",
+        "document_count": 13,
+        "created": true,
+        "index_class": "IndexFlatL2",
+        "metric_type": 1,
+        "embedding_dimension": 1024
+      },
+      "results": {
+        "index_name": "faiss_results",
+        "document_count": 23,
+        "created": true,
+        "index_class": "IndexFlatL2",
+        "metric_type": 1,
+        "embedding_dimension": 1024
+      },
+      "discussion": {
+        "index_name": "faiss_discussion",
+        "document_count": 19,
+        "created": true,
+        "index_class": "IndexFlatL2",
+        "metric_type": 1,
+        "embedding_dimension": 1024
+      },
+      "results_discussion": {
+        "index_name": "faiss_results_discussion",
+        "document_count": 0,
+        "created": false
+      },
+      "conclusion": {
+        "index_name": "faiss_conclusion",
+        "document_count": 7,
+        "created": true,
+        "index_class": "IndexFlatL2",
+        "metric_type": 1,
+        "embedding_dimension": 1024
+      },
+      "other": {
+        "index_name": "faiss_other",
+        "document_count": 0,
+        "created": false
+      },
+      "metadata": {
+        "index_name": "faiss_metadata",
+        "document_count": 1,
+        "created": true,
+        "index_class": "IndexFlatL2",
+        "metric_type": 1,
+        "embedding_dimension": 1024
+      }
+    }
+  },
+  "chunking_config_from_graph": {
+    "strategy": "section -> paragraph -> SciSpaCy sentence -> BGE-token-aware chunk",
+    "spacy_model": "en_core_sci_sm",
+    "tokenizer_model": "D:\\BGE_large_en_1.5v",
+    "tokenizer_model_max_length": 512,
+    "max_chunk_tokens": 480,
+    "sentence_overlap": 1,
+    "token_count_includes_special_tokens": true
+  },
+  "token_validation": {
+    "documents_checked": 68,
+    "section_documents_checked": 67,
+    "metadata_documents_checked": 1,
+    "embedding_tokenizer_model_max_length": 512,
+    "graph_declared_chunk_tokenizer": "D:\\BGE_large_en_1.5v",
+    "graph_declared_max_chunk_tokens": 480,
+    "max_tokens_observed": 480,
+    "max_tokens_observed_evidence_uid": "test::metadata_structured",
+    "stored_token_count_mismatches": 0,
+    "stored_token_count_mismatch_examples": [],
+    "over_declared_chunk_limit": 0,
+    "over_declared_chunk_limit_examples": [],
+    "overlength_documents": 0,
+    "overlength_examples": []
+  }
+}

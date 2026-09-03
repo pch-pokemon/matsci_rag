@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "shared_settings": {
+    "embedding_model": "BAAI/bge-large-en-v1.5",
+    "reranker_model": "BAAI/bge-reranker-large",
+    "generation_model": "GLM-4.1V-Thinking-Flash",
+    "retrieval_top_k": 20,
+    "rerank_top_n": 10,
+    "max_evidence_objects": 20,
+    "max_textual_evidence_tokens": 5120,
+    "max_visual_tabular_items": 5,
+    "temperature": 0
+  },
+  "modes": {
+    "full": {
+      "enable_structure": true,
+      "enable_association": true,
+      "enable_multimodal": true,
+      "description": "Complete MatSci-RAG."
+    },
+    "wo_structure": {
+      "enable_structure": false,
+      "enable_association": true,
+      "enable_multimodal": true,
+      "description": "Search all section buckets; retain association and multimodal evidence."
+    },
+    "wo_multimodal": {
+      "enable_structure": true,
+      "enable_association": true,
+      "enable_multimodal": false,
+      "remove_figures": true,
+      "remove_tables": true,
+      "description": "Remove figures/tables and associated payloads before context construction."
+    },
+    "wo_association": {
+      "enable_structure": true,
+      "enable_association": false,
+      "enable_multimodal": true,
+      "caption_level_independent_retrieval": true,
+      "caption_top_k": 5,
+      "description": "Disable graph text-object association; retrieve figure/table captions independently."
+    }
+  }
+}

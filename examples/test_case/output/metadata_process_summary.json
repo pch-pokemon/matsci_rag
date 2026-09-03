@@ -1,0 +1,15 @@
+{
+  "doc_id": "test",
+  "source_file": "test.md",
+  "evidence_uid": "test::metadata_structured",
+  "cache_hit": true,
+  "cache_upgraded_to_current_schema": true,
+  "llm_called": false,
+  "embedding_token_count": 480,
+  "max_embedding_tokens": 480,
+  "tokenizer_model": "D:\\BGE_large_en_1.5v",
+  "outputs": {
+    "metadata_node.json": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\metadata_node.json",
+    "metadata_structured.json": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\metadata_structured.json"
+  }
+}

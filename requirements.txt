@@ -1,0 +1,50 @@
+# MatSci-RAG public reference environment
+# Recommended Python: 3.10
+#
+# This file lists the direct runtime dependencies used by the public pipeline.
+# After a successful clean installation on the manuscript/release machine,
+# an optional exact lock can be generated with:
+#   python -m pip freeze > requirements-lock.txt
+
+# -----------------------------
+# Core numerical / ML stack
+# -----------------------------
+numpy>=1.26,<2.0
+torch>=2.2,<3.0
+transformers>=4.41,<5.0
+sentence-transformers>=3.0,<6.0
+faiss-cpu>=1.8,<2.0
+
+# -----------------------------
+# LangChain / GLM integration
+# -----------------------------
+langchain-core>=0.3.60,<1.0
+langchain-community>=0.3.25,<0.4
+langchain-huggingface>=0.2,<0.4
+zhipuai>=2.1,<3.0
+python-dotenv>=1.0,<2.0
+
+# -----------------------------
+# PDF / Markdown / scientific text processing
+# -----------------------------
+pdfdeal==1.0.2
+beautifulsoup4>=4.12,<5.0
+spacy>=3.7.4,<3.8.0
+
+# SciSpaCy scientific English model used by json_split.py.
+# The public code loads this model through: spacy.load("en_core_sci_sm")
+en_core_sci_sm @ https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.4/en_core_sci_sm-0.5.4.tar.gz
+
+# -----------------------------
+# Notebook / released evaluation utilities
+# -----------------------------
+pandas>=2.0,<3.0
+scikit-learn>=1.4,<2.0
+matplotlib>=3.8,<4.0
+openpyxl>=3.1,<4.0
+jupyterlab>=4.0,<5.0
+ipykernel>=6.29,<7.0
+
+# RAGAS evaluation toolkit used by the released QA evaluation utilities.
+# This is pinned as a public reference-environment version.
+ragas==0.2.15

@@ -1,0 +1,184 @@
+{
+  "schema_version": "1.0-demo-build",
+  "started_at": "2026-09-01 16:29:08",
+  "input": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\doc2x\\doc2x_output\\test\\test.md",
+  "workspace": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case",
+  "doc_id": "test",
+  "configuration": {
+    "spacy_model": "en_core_sci_sm",
+    "tokenizer_model": "D:\\BGE_large_en_1.5v",
+    "embedding_model": "D:\\BGE_large_en_1.5v",
+    "rerank_model": "D:\\BGE-rerank-large",
+    "device": "cuda",
+    "max_chunk_tokens": 480,
+    "chunk_overlap_sentences": 1,
+    "metadata_model": "glm-4-plus",
+    "metadata_enabled": true,
+    "embedding_enabled": true,
+    "doc2x_output_format": "md_dollar"
+  },
+  "steps": {
+    "pdf_to_md": "skipped_markdown_input",
+    "clean_md": "completed",
+    "md_json": "completed",
+    "json_split": "completed",
+    "metadata_processor": "completed",
+    "merge_metadata": "completed",
+    "embedding_json": "completed"
+  },
+  "outputs": {
+    "source": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\source\\test.md",
+    "markdown": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\source\\test.md",
+    "cleaned_markdown": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\intermediate\\test.cleaned.md",
+    "structured_json": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\intermediate\\test.json",
+    "graph": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\paper_graph.json",
+    "retrieval_docs": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\retrieval_docs.jsonl",
+    "metadata_node": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\metadata_node.json",
+    "metadata_merge_report": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\metadata_merge_report.json",
+    "faiss_index_dir": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\faiss_section_indexes",
+    "build_summary": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\build_demo_summary.json"
+  },
+  "source_file": "test.md",
+  "metadata": {
+    "doc_id": "test",
+    "source_file": "test.md",
+    "evidence_uid": "test::metadata_structured",
+    "cache_hit": true,
+    "cache_upgraded_to_current_schema": true,
+    "llm_called": false,
+    "embedding_token_count": 480,
+    "max_embedding_tokens": 480,
+    "tokenizer_model": "D:\\BGE_large_en_1.5v",
+    "outputs": {
+      "metadata_node.json": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\metadata_node.json",
+      "metadata_structured.json": "C:\\Users\\12279\\MatSci_RAG\\matsci_rag\\examples\\test_case\\output\\metadata_structured.json"
+    }
+  },
+  "metadata_merge": {
+    "graph_doc_id": "test",
+    "graph_source_file": "test.md",
+    "metadata_doc_id": "test",
+    "metadata_source_file": "test.md",
+    "metadata_evidence_uid": "test::metadata_structured",
+    "existing_metadata_structured_nodes": 0,
+    "action": "insert_new",
+    "replaced_indices": [],
+    "inserted": true,
+    "warnings": [],
+    "identifier_check": {
+      "node_id_unique": true,
+      "evidence_uid_unique": true,
+      "node_id_count": 193,
+      "evidence_uid_count": 193
+    },
+    "final_total_nodes": 193,
+    "final_total_edges": 646,
+    "metadata_structured_nodes": 1
+  },
+  "faiss_manifest": {
+    "schema_version": "1.0",
+    "doc_id": "test",
+    "source_file": "test.md",
+    "inputs": {
+      "retrieval_docs": "retrieval_docs.jsonl",
+      "paper_graph": "paper_graph.json"
+    },
+    "embedding": {
+      "model": "D:\\BGE_large_en_1.5v",
+      "device": "cuda",
+      "normalize_embeddings": true,
+      "trust_remote_code": true,
+      "tokenizer_model_max_length": 512
+    },
+    "faiss": {
+      "index_directory": "faiss_section_indexes",
+      "distance_semantics": "LangChain FAISS.from_documents default IndexFlatL2; smaller L2 distance is more similar. With normalized embeddings, L2 ranking is monotonic with cosine similarity.",
+      "indexes": {
+        "intro": {
+          "index_name": "faiss_intro",
+          "document_count": 5,
+          "created": true,
+          "index_class": "IndexFlatL2",
+          "metric_type": 1,
+          "embedding_dimension": 1024
+        },
+        "method": {
+          "index_name": "faiss_method",
+          "document_count": 13,
+          "created": true,
+          "index_class": "IndexFlatL2",
+          "metric_type": 1,
+          "embedding_dimension": 1024
+        },
+        "results": {
+          "index_name": "faiss_results",
+          "document_count": 23,
+          "created": true,
+          "index_class": "IndexFlatL2",
+          "metric_type": 1,
+          "embedding_dimension": 1024
+        },
+        "discussion": {
+          "index_name": "faiss_discussion",
+          "document_count": 19,
+          "created": true,
+          "index_class": "IndexFlatL2",
+          "metric_type": 1,
+          "embedding_dimension": 1024
+        },
+        "results_discussion": {
+          "index_name": "faiss_results_discussion",
+          "document_count": 0,
+          "created": false
+        },
+        "conclusion": {
+          "index_name": "faiss_conclusion",
+          "document_count": 7,
+          "created": true,
+          "index_class": "IndexFlatL2",
+          "metric_type": 1,
+          "embedding_dimension": 1024
+        },
+        "other": {
+          "index_name": "faiss_other",
+          "document_count": 0,
+          "created": false
+        },
+        "metadata": {
+          "index_name": "faiss_metadata",
+          "document_count": 1,
+          "created": true,
+          "index_class": "IndexFlatL2",
+          "metric_type": 1,
+          "embedding_dimension": 1024
+        }
+      }
+    },
+    "chunking_config_from_graph": {
+      "strategy": "section -> paragraph -> SciSpaCy sentence -> BGE-token-aware chunk",
+      "spacy_model": "en_core_sci_sm",
+      "tokenizer_model": "D:\\BGE_large_en_1.5v",
+      "tokenizer_model_max_length": 512,
+      "max_chunk_tokens": 480,
+      "sentence_overlap": 1,
+      "token_count_includes_special_tokens": true
+    },
+    "token_validation": {
+      "documents_checked": 68,
+      "section_documents_checked": 67,
+      "metadata_documents_checked": 1,
+      "embedding_tokenizer_model_max_length": 512,
+      "graph_declared_chunk_tokenizer": "D:\\BGE_large_en_1.5v",
+      "graph_declared_max_chunk_tokens": 480,
+      "max_tokens_observed": 480,
+      "max_tokens_observed_evidence_uid": "test::metadata_structured",
+      "stored_token_count_mismatches": 0,
+      "stored_token_count_mismatch_examples": [],
+      "over_declared_chunk_limit": 0,
+      "over_declared_chunk_limit_examples": [],
+      "overlength_documents": 0,
+      "overlength_examples": []
+    }
+  },
+  "completed_at": "2026-09-01 16:29:19"
+}
